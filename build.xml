@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MoodTracker" default="run" basedir=".">
+
+    <property name="src.dir" value="." />
+    <property name="build.dir" value="build" />
+    <property name="main-class" value="MoodTracker" />
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}" />
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" />
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${main-class}" fork="true" classpath="${build.dir}" />
+    </target>
+
+</project>
