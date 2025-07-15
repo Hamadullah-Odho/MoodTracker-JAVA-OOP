@@ -6,7 +6,11 @@ import java.time.format.DateTimeFormatter;
 final public class TrackerSystem {
     Scanner scan = new Scanner(System.in);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm-ss");
-    List<Mood> mood = new ArrayList<>();
+    List<Mood> mood;
+
+    public TrackerSystem(){
+        this.mood = LoadData.loadData();
+    }
     public void addMood(){
         try{
             System.out.println("--- ADD MOOD MENU ---\n");
